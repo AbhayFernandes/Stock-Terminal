@@ -27,11 +27,11 @@ def earnings(symbol) -> DataFrame:
     data = r.json()
     annuals = pd.json_normalize(
         data,
-        record_path = ['annualReports'],
+        record_path = ['annualEarnings'],
     )
     quarterlies = pd.json_normalize(
         data,
-        record_path=['quarterlyReports'],
+        record_path=['quarterlyEarnings'],
     )
     return annuals, quarterlies
 
